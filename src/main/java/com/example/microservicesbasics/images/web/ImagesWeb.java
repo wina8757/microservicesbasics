@@ -16,8 +16,6 @@ public class ImagesWeb {
 	@ResponseBody
 	ImagesWebResult images() {
 		ImagesWebResult iwRes = new ImagesWebResult();
-		iwRes.setId("1");
-		iwRes.setName("images");
 		iwRes.setApiurl(imagesApiUrl);
 		return iwRes;
 	}
