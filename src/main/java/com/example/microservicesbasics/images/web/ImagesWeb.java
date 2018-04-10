@@ -11,7 +11,7 @@ public class ImagesWeb {
 	ImagesWebResult images() {
 		ImagesWebResult iwRes = new ImagesWebResult();
 		iwRes.setId("1");
-		iwRes.setName("Images 1");
+		iwRes.setName("images");
 		return iwRes;
 	}
 }
