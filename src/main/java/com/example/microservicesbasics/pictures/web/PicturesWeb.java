@@ -1,6 +1,7 @@
 package com.example.microservicesbasics.pictures.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +14,8 @@ public class PicturesWeb {
 	PicturesLogicManager manager;
 	@RequestMapping("/pictures")
 	@ResponseBody
-	String pictures() {
-		String result = manager.obtainPictureApiImageUrl();
+	ResponseEntity<String> pictures() {
+		ResponseEntity<String> result = manager.obtainPictureApiImageUrl();
 //		PicturesWebResult pwRes = new PicturesWebResult();
 //		pwRes.setUrl(result);
 		
