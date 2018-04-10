@@ -1,18 +1,23 @@
 package com.example.microservicesbasics.pictures.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.microservicesbasics.pictures.logic.PicturesLogicManager;
+
 @RestController
 public class PicturesWeb {
+	@Autowired
+	PicturesLogicManager manager;
 	@RequestMapping("/pictures")
 	@ResponseBody
-	PicturesWebResult pictures() {
-		PicturesWebResult pwRes = new PicturesWebResult();
-		pwRes.setId("2");
-		pwRes.setName("pictures");
-		pwRes.setUrl("stub.url");
-		return pwRes;
+	String pictures() {
+		String result = manager.obtainPictureApiImageUrl();
+//		PicturesWebResult pwRes = new PicturesWebResult();
+//		pwRes.setUrl(result);
+		
+		return result;
 	} 
 }
